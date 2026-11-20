@@ -1,0 +1,6 @@
+,Test Sharpe after costs,Luck benchmark (expected max Sharpe of skill-less trials),Deflated Sharpe ratio (%),Probability Sharpe > 0 (%)
+Logistic regression,0.442,0.984,8.124,87.278
+Logistic regression + vol-managed,0.585,0.984,15.166,93.436
+Vol-managed SPY,0.72,0.984,24.825,96.802
+Buy-and-hold,0.661,0.984,20.231,95.61
+"Logistic regression (validation period, where it was selected)",,0.984,41.331,

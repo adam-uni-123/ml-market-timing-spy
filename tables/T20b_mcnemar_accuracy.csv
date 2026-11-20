@@ -1,0 +1,4 @@
+Model A,Model B,Accuracy A (%),Accuracy B (%),Right only A,Right only B,McNemar exact p-value
+Logistic regression,Random forest,54.242,53.54,137,125,0.497
+Logistic regression,Gradient boosting,54.242,53.072,246,226,0.382
+Random forest,Gradient boosting,53.54,53.072,173,165,0.703

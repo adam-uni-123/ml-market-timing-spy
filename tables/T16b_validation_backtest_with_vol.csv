@@ -1,0 +1,9 @@
+,Before costs,Before costs,After 10 bps costs,After 10 bps costs,After 10 bps costs,After 10 bps costs,After 10 bps costs,After 10 bps costs,After 10 bps costs,After 10 bps costs,After 10 bps costs
+,Annualised return (%),Sharpe ratio,Cumulative return (%),Annualised return (%),Annualised volatility (%),Sharpe ratio,Max drawdown (%),Turnover (x per year),Trades,Time in SPY (%),Average SPY weight (%)
+Logistic regression,14.37,1.0,41.43,12.28,12.52,0.85,-21.33,18.38,55.0,94.56,94.56
+Random forest,12.77,0.91,31.23,9.51,12.21,0.67,-17.59,29.41,88.0,75.07,75.07
+Gradient boosting,3.53,0.22,-11.85,-4.13,11.02,-0.48,-25.83,76.87,230.0,55.44,55.44
+Buy-and-hold,15.19,1.04,52.52,15.15,12.82,1.03,-19.35,0.33,1.0,100.0,100.0
+SMA 50/200 crossover,12.87,0.96,43.23,12.76,11.53,0.95,-10.86,1.0,3.0,90.72,90.72
+Vol-managed SPY,13.75,1.04,46.18,13.53,11.39,1.02,-16.2,1.94,45.0,100.0,95.0
+Logistic regression + vol-managed,13.53,1.04,38.36,11.46,11.17,0.88,-17.6,18.38,91.0,94.56,90.29

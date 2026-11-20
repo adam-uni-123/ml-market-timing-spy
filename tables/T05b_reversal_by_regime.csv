@@ -1,0 +1,6 @@
+,Lag-1 autocorrelation
+Calm days (prior vol below median),-0.04
+Turbulent days (prior vol above median),-0.112
+Train period (to 2016),-0.081
+Validation period (2017-19),-0.039
+Test period (2020-),-0.147

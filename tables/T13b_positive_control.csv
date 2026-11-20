@@ -1,0 +1,3 @@
+,Real labels: CV ROC-AUC,Shuffled labels: mean ROC-AUC
+"Logistic regression, 37 genuine predictors",0.493,0.491
+Same + leaked tomorrow's return,0.989,0.51

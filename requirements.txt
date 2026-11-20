@@ -1,0 +1,14 @@
+# FI4008 ML trading strategy - needs Python 3.12+ (numpy 2.5.3 has no 3.11 build); I used Python 3.13
+# Install: py -m pip install -r requirements.txt     (Windows)   or   python -m pip install -r requirements.txt
+# Analysis (main.py / the notebook): the exact versions that produced the submitted tables and figures
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+# Only needed for download_data.py, not for rerunning the analysis from the saved data
+yfinance==1.7.0
+requests==2.34.2
+# Optional, only if you want to open the notebook
+# jupyter
+# ipykernel

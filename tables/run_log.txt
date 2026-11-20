@@ -1,0 +1,131 @@
+Python 3.13.16 | numpy 2.5.3 | pandas 3.0.5 | scipy 1.18.1 | scikit-learn 1.9.1 | matplotlib 3.11.2
+
+--- 1. Data ---
+All 18 raw files verified (downloaded 2026-10-22T16:43:01+00:00)
+FRED blanks (bond-market holidays): {'DGS3MO': 233, 'DGS2': 233, 'DGS10': 233, 'T10Y2Y': 233, 'T10Y3M': 233}
+Sample end date: 2026-10-21
+5485 trading days; unscheduled closures: [datetime.date(2007, 1, 2), datetime.date(2012, 10, 29), datetime.date(2012, 10, 30), datetime.date(2018, 12, 5), datetime.date(2025, 1, 9)]
+VIX rows on non-trading days (dropped): [datetime.date(2026, 5, 25), datetime.date(2026, 9, 7)]
+SPY total return 10.91% a year, price return 8.91%, dividends 2.00%
+|z| > 4: observed 40 days, normal distribution would give 0.35
+Training period only: absolute-return AC outside band at 20 of 20 lags (smallest 0.24); lag-1 return AC -0.081
+                      Days  Up days (%)  Ann. return (%)  Ann. vol (%)  Max drawdown (%)
+Train (to 2016)       3020         54.8              7.5          19.5             -55.2
+Validation (2017-19)   754         56.5             15.1          12.8             -19.3
+Test (2020-)          1710         54.7             15.4          20.0             -33.7
+Median daily dollar volume: $23.1bn
+
+--- 2. Features ---
+Modelling table: 5232 days x 37 predictors, 2006-01-03 to 2026-10-20
+Truncation test passed on 14 dates: no predictor uses future data
+Target alignment test passed: target(t) equals the realised return of day t+1
+Largest absolute correlation with next-day return: 0.064 (rsi_14)
+16 of 666 predictor pairs have |correlation| > 0.8
+
+--- 3. Models ---
+Train 2768 days (purged), validation 754, test 1709
+                     Combinations tried                               Best hyperparameters  CV ROC-AUC (mean)  CV ROC-AUC (std)  CV accuracy (mean)
+Model                                                                                                                                              
+Logistic regression                   8                  {'C': 0.01, 'pca': 'passthrough'}              0.493             0.028               0.537
+Random forest                        12  {'max_depth': 5, 'max_features': 0.5, 'min_sam...              0.495             0.023               0.532
+Gradient boosting                    16  {'l2_regularization': 1.0, 'learning_rate': 0....              0.496             0.022               0.518
+                     Real labels: CV ROC-AUC  Shuffled labels: mean ROC-AUC  Shuffled labels: std
+Model                                                                                            
+Logistic regression                    0.493                          0.491                 0.025
+Random forest                          0.495                          0.495                 0.019
+Gradient boosting                      0.496                          0.507                 0.028 
+                                             Real labels: CV ROC-AUC  Shuffled labels: mean ROC-AUC
+Logistic regression, 37 genuine predictors                    0.493                          0.491
+Same + leaked tomorrow's return                               0.989                          0.510
+
+--- 4. Validation ---
+                       Accuracy  Always-up accuracy  Precision (up)  Recall (up)  F1 (up)  ROC-AUC  Log loss  Predicted up (%)
+Logistic regression       0.550               0.565           0.561        0.939    0.702    0.477     0.690            94.562
+Random forest             0.538               0.565           0.569        0.756    0.649    0.479     0.693            75.066
+Gradient boosting         0.504               0.565           0.562        0.552    0.557    0.504     0.701            55.438
+Always up (benchmark)     0.565               0.565           0.565        1.000    0.722    0.500       NaN           100.000
+
+--- 5. Backtest ---
+Candidate: Logistic regression; volatility target 16.5%
+                                   Annualised return (%)  Sharpe ratio  Max drawdown (%)
+Logistic regression                                12.28          0.85            -21.33
+Random forest                                       9.51          0.67            -17.59
+Gradient boosting                                  -4.13         -0.48            -25.83
+Buy-and-hold                                       15.15          1.03            -19.35
+SMA 50/200 crossover                               12.76          0.95            -10.86
+Vol-managed SPY                                    13.53          1.02            -16.20
+Logistic regression + vol-managed                  11.46          0.88            -17.60
+
+--- 6. Test ---
+                       Accuracy  Always-up accuracy  Precision (up)  Recall (up)  F1 (up)  ROC-AUC  Log loss  Predicted up (%)  PT statistic  PT p-value
+Logistic regression       0.542               0.547           0.548        0.942    0.693    0.503     0.691            94.149         0.147       0.442
+Random forest             0.535               0.547           0.549        0.852    0.668    0.512     0.690            85.020         0.280       0.390
+Gradient boosting         0.531               0.547           0.554        0.724    0.628    0.524     0.695            71.445         0.967       0.167
+Always up (benchmark)     0.547               0.547           0.547        1.000    0.707    0.500       NaN           100.000           NaN         NaN
+                   MAE (%)  RMSE (%)  Out-of-sample R² vs historical mean (%)  Direction accuracy
+Ridge regression     0.826     1.262                                   -0.207               0.528
+Random forest        0.829     1.261                                    0.077               0.524
+Gradient boosting    0.832     1.271                                   -1.516               0.531
+Zero forecast        0.829     1.262                                   -0.165               0.453
+Historical mean      0.826     1.261                                    0.000               0.547
+                                   Cumulative return (%)  Annualised return (%)  Sharpe ratio  Max drawdown (%)
+Logistic regression                                90.24                   9.95          0.44            -34.61
+Random forest                                      97.76                  10.58          0.48            -34.55
+Gradient boosting                                  64.19                   7.59          0.34            -27.65
+Buy-and-hold                                      161.45                  15.22          0.66            -33.72
+SMA 50/200 crossover                               96.07                  10.44          0.50            -33.72
+Vol-managed SPY                                   130.16                  13.08          0.72            -20.97
+Logistic regression + vol-managed                 100.13                  10.77          0.58            -20.39
+                     Accuracy  ROC-AUC  Sharpe before costs  Sharpe after costs  Turnover (x per year)  Time in SPY (%)  Rank by accuracy  Rank by Sharpe after costs
+Logistic regression     0.542    0.503                0.533               0.442                 16.957           94.149                 1                           2
+Random forest           0.535    0.512                0.623               0.477                 26.984           85.020                 2                           1
+Gradient boosting       0.531    0.524                0.732               0.345                 64.143           71.445                 3                           3
+
+--- 7. Robustness ---
+                                   0 bps  5 bps  10 bps  20 bps  Turnover (x per year)
+Logistic regression                 0.53   0.49    0.44    0.35                  16.96
+Random forest                       0.62   0.55    0.48    0.33                  26.98
+Gradient boosting                   0.73   0.54    0.34   -0.04                  64.14
+Buy-and-hold                        0.66   0.66    0.66    0.66                   0.15
+SMA 50/200 crossover                0.51   0.50    0.50    0.49                   1.03
+Vol-managed SPY                     0.74   0.73    0.72    0.70                   2.45
+Logistic regression + vol-managed   0.69   0.64    0.58    0.48                  14.21 
+                          Long/cash (main)                                          Long/short                                       One-day delay                                       5-day horizon  \
+                    Annualised return (%) Sharpe ratio Max drawdown (%) Annualised return (%) Sharpe ratio Max drawdown (%) Annualised return (%) Sharpe ratio Max drawdown (%) Annualised return (%)   
+Logistic regression                  9.95         0.44           -34.61                  4.39         0.17           -42.20                 11.88         0.53           -29.11                 15.76   
+Random forest                       10.58         0.48           -34.55                  5.49         0.22           -41.59                 11.13         0.50           -29.61                 14.31   
+Gradient boosting                    7.59         0.34           -27.65                 -0.80        -0.09           -40.57                  4.71         0.18           -30.00                 10.19   
+
+                                                   
+                    Sharpe ratio Max drawdown (%)  
+Logistic regression         0.70           -33.72  
+Random forest               0.62           -33.72  
+Gradient boosting           0.45           -33.72  
+                                   Sharpe difference vs buy-and-hold  95% CI lower  95% CI upper  Share of resamples above 0 (%)
+Logistic regression                                           -0.219        -0.434        -0.011                            2.05
+Random forest                                                 -0.184        -0.413         0.041                            5.25
+Gradient boosting                                             -0.317        -0.841         0.145                            9.15
+SMA 50/200 crossover                                          -0.162        -0.549         0.293                           24.35
+Vol-managed SPY                                                0.059        -0.215         0.318                           59.60
+Logistic regression + vol-managed                             -0.076        -0.411         0.222                           27.55
+Trials: 38 configurations
+                                                    Test Sharpe after costs  Luck benchmark (expected max Sharpe of skill-less trials)  Deflated Sharpe ratio (%)  Probability Sharpe > 0 (%)
+Logistic regression                                                   0.442                                              0.984                              8.124                      87.278
+Logistic regression + vol-managed                                     0.585                                              0.984                             15.166                      93.436
+Vol-managed SPY                                                       0.720                                              0.984                             24.825                      96.802
+Buy-and-hold                                                          0.661                                              0.984                             20.231                      95.610
+Logistic regression (validation period, where i...                      NaN                                              0.984                             41.331                         NaN
+
+--- 8. Checks ---
+Forbidden-pattern scan (should all be 0): {'bfill': 0, 'backfill': 0, 'shuffle=True': 0, 'center=True': 0, 'train_test_split': 0, 'KFold(': 0}
+  ✓ Raw files match their recorded SHA-256 fingerprints
+  ✓ Calendars aligned; no missing predictor values after warm-up
+  ✓ Truncation test: predictors identical when computed with data up to each date only
+  ✓ Target alignment: target(t) equals the realised return of day t+1
+  ✓ Chronology and purging: train < validation < test, no label overlap
+  ✓ Placebo (sanity check of the validation procedure): shuffled labels give ROC-AUC ≈ 0.5
+  ✓ Positive control: a deliberately leaked predictor is detected (ROC-AUC > 0.9)
+  ✓ Walk-forward: every model is fitted only on data before the year it predicts
+  ✓ Backtest arithmetic verified on a hand-computed example
+Random seed 42; sample 2005-01-03 to 2026-10-21; data downloaded 2026-10-22T16:43:01+00:00
+EXIT 0

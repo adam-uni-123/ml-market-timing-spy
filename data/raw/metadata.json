@@ -1,0 +1,476 @@
+{
+  "project": "FI4008 Individual Assessment 1: Machine-Learning Trading Strategy",
+  "download_started_utc": "2026-10-22T16:43:01+00:00",
+  "download_finished_utc": "2026-10-22T16:43:35+00:00",
+  "requested_start": "2005-01-01",
+  "requested_end": "latest available",
+  "yahoo_settings": {
+    "interval": "1d",
+    "auto_adjust": false,
+    "actions": false
+  },
+  "notes": [
+    "Adj Close adjusts for dividends and splits as of the download date; its level changes between downloads, daily returns do not materially.",
+    "FRED values are as published at download time; '.' (holidays) saved as blank.",
+    "FRED H.15 Treasury yields for day t are published the next business day."
+  ],
+  "environment": {
+    "python": "3.14.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas": "3.1.0",
+    "yfinance": "1.7.0",
+    "requests": "2.34.2"
+  },
+  "files": [
+    {
+      "name": "SPY",
+      "file": "SPY.csv",
+      "description": "SPDR S&P 500 ETF Trust (traded asset)",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 5486,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "8b43e2ccf68f4b85a0040a71ac3e4d9b2ecec7d0181633fb4e1826b7095b1477",
+      "warnings": [],
+      "zero_volume_rows": 0
+    },
+    {
+      "name": "XLB",
+      "file": "XLB.csv",
+      "description": "Materials Select Sector SPDR",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 5486,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "13c047d7226bd984aff027f4445b1f930e5588d5beab919dde166aec68d8f8a8",
+      "warnings": [],
+      "zero_volume_rows": 0
+    },
+    {
+      "name": "XLC",
+      "file": "XLC.csv",
+      "description": "Communication Services Select Sector SPDR (starts June 2018)",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 2098,
+      "first_date": "2018-06-19",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "f7c66d84f62b9626dfe30654c7d64036adc05e03e55b73c0954c5e5f46752404",
+      "warnings": [],
+      "zero_volume_rows": 0
+    },
+    {
+      "name": "XLE",
+      "file": "XLE.csv",
+      "description": "Energy Select Sector SPDR",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 5486,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "69bd13df4d843c22281399043342baef7e4243e93eceb9673083e8cf3915c1e1",
+      "warnings": [],
+      "zero_volume_rows": 0
+    },
+    {
+      "name": "XLF",
+      "file": "XLF.csv",
+      "description": "Financial Select Sector SPDR",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 5486,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "04b5c4ee3b4cf33508d10f9f87f63d2e80e1aa31009dc29410bb5c4a766ec11b",
+      "warnings": [],
+      "zero_volume_rows": 0
+    },
+    {
+      "name": "XLI",
+      "file": "XLI.csv",
+      "description": "Industrial Select Sector SPDR",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 5486,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "0cebe77e4eac926c63e075e57d9d252872bd51a6b1e377564341c070dd5668f8",
+      "warnings": [],
+      "zero_volume_rows": 0
+    },
+    {
+      "name": "XLK",
+      "file": "XLK.csv",
+      "description": "Technology Select Sector SPDR",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 5486,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "295265fdc428a2f23822808099fee5d696ef34597c9e33b99221315ba32c3874",
+      "warnings": [],
+      "zero_volume_rows": 0
+    },
+    {
+      "name": "XLP",
+      "file": "XLP.csv",
+      "description": "Consumer Staples Select Sector SPDR",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 5486,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "715b23fdeddf4ceeb3a1d4f7fbe402f5e9066b303c676756fbd4979b7a7d5b59",
+      "warnings": [],
+      "zero_volume_rows": 0
+    },
+    {
+      "name": "XLRE",
+      "file": "XLRE.csv",
+      "description": "Real Estate Select Sector SPDR (starts October 2015)",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 2776,
+      "first_date": "2015-10-08",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "76467305f85f04d3cf8ace1258e968fdfa9df610a86b04a954a9059f6e2f7eff",
+      "warnings": [],
+      "zero_volume_rows": 5
+    },
+    {
+      "name": "XLU",
+      "file": "XLU.csv",
+      "description": "Utilities Select Sector SPDR",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 5486,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "9b4a71f2550a74859cd6e8f10dc6f5534a48c8effc5d59c9c636d41121c77745",
+      "warnings": [],
+      "zero_volume_rows": 0
+    },
+    {
+      "name": "XLV",
+      "file": "XLV.csv",
+      "description": "Health Care Select Sector SPDR",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 5486,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "a267d94197a2f2e4053aeac99a58e13bad5e406b06d1054955c539bb1211f13a",
+      "warnings": [],
+      "zero_volume_rows": 0
+    },
+    {
+      "name": "XLY",
+      "file": "XLY.csv",
+      "description": "Consumer Discretionary Select Sector SPDR",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 5486,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "dd40ca19e706f7282c954895e4ff5a5bc5d5f2d35b76570fac9e224a390deddd",
+      "warnings": [],
+      "zero_volume_rows": 0
+    },
+    {
+      "name": "^VIX",
+      "file": "VIX.csv",
+      "description": "Cboe Volatility Index (an index: volume is always 0)",
+      "source": "Yahoo Finance via yfinance",
+      "rows": 5488,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-22",
+      "missing_values": {
+        "Open": 0,
+        "High": 0,
+        "Low": 0,
+        "Close": 0,
+        "Adj Close": 0,
+        "Volume": 0
+      },
+      "columns": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "sha256": "3a99da6d090a3e87b747d849ed522cdc30761a3782e0dda1d359bcef850ea6ff",
+      "warnings": [],
+      "zero_volume_rows": 5488
+    },
+    {
+      "name": "DGS3MO",
+      "file": "FRED_DGS3MO.csv",
+      "description": "3-month Treasury, constant maturity, % p.a. (risk-free proxy)",
+      "source": "FRED, https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO",
+      "rows": 5687,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-20",
+      "missing_values": {
+        "DGS3MO": 233
+      },
+      "columns": [
+        "DGS3MO"
+      ],
+      "sha256": "a30aca0b9f4b734148a6bba08732e4c4fb896ed4342814f188f12c157f7b36c5",
+      "warnings": []
+    },
+    {
+      "name": "DGS2",
+      "file": "FRED_DGS2.csv",
+      "description": "2-year Treasury, constant maturity, % p.a.",
+      "source": "FRED, https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2",
+      "rows": 5687,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-20",
+      "missing_values": {
+        "DGS2": 233
+      },
+      "columns": [
+        "DGS2"
+      ],
+      "sha256": "a10875cbcda48941d177d4b1d93b0bc739806d418ece8d76faa2e004d6937c63",
+      "warnings": []
+    },
+    {
+      "name": "DGS10",
+      "file": "FRED_DGS10.csv",
+      "description": "10-year Treasury, constant maturity, % p.a.",
+      "source": "FRED, https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10",
+      "rows": 5687,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-20",
+      "missing_values": {
+        "DGS10": 233
+      },
+      "columns": [
+        "DGS10"
+      ],
+      "sha256": "174760cd08ed232449f325d2f471037d5ba4fc3c37fa7d03d0f1ab0389528b0d",
+      "warnings": []
+    },
+    {
+      "name": "T10Y2Y",
+      "file": "FRED_T10Y2Y.csv",
+      "description": "10-year minus 2-year Treasury spread, percentage points",
+      "source": "FRED, https://fred.stlouisfed.org/graph/fredgraph.csv?id=T10Y2Y",
+      "rows": 5688,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-21",
+      "missing_values": {
+        "T10Y2Y": 233
+      },
+      "columns": [
+        "T10Y2Y"
+      ],
+      "sha256": "aa3b76cacb21a36bec4c2f3771785dca8574935f35ca4c5d13949fb14f29a2ce",
+      "warnings": []
+    },
+    {
+      "name": "T10Y3M",
+      "file": "FRED_T10Y3M.csv",
+      "description": "10-year minus 3-month Treasury spread, percentage points",
+      "source": "FRED, https://fred.stlouisfed.org/graph/fredgraph.csv?id=T10Y3M",
+      "rows": 5688,
+      "first_date": "2005-01-03",
+      "last_date": "2026-10-21",
+      "missing_values": {
+        "T10Y3M": 233
+      },
+      "columns": [
+        "T10Y3M"
+      ],
+      "sha256": "d4c29ec99cad9e3464f8fea663ed0e9af3002df2c139fd885bbe4f4240d11764",
+      "warnings": []
+    }
+  ],
+  "failures": []
+}

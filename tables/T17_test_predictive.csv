@@ -1,0 +1,5 @@
+,Accuracy,Always-up accuracy,Precision (up),Recall (up),F1 (up),ROC-AUC,Log loss,Predicted up (%),PT statistic,PT p-value
+Logistic regression,0.542,0.547,0.548,0.942,0.693,0.503,0.691,94.149,0.147,0.442
+Random forest,0.535,0.547,0.549,0.852,0.668,0.512,0.69,85.02,0.28,0.39
+Gradient boosting,0.531,0.547,0.554,0.724,0.628,0.524,0.695,71.445,0.967,0.167
+Always up (benchmark),0.547,0.547,0.547,1.0,0.707,0.5,,100.0,,

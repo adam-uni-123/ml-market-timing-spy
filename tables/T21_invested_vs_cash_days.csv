@@ -1,0 +1,4 @@
+,Days invested,Avg SPY return on invested days (bps),Days in cash,Avg SPY return on cash days (bps),"Std. error, cash-day average (bps)","Avg SPY return ON the decision day, cash days (bps)","Avg SPY return ON the decision day, invested days (bps)",Cash days that followed an up day (%),Cash days in 2020,Cash days in Mar-Jun 2020,SPY gain missed on Mar-Jun 2020 cash days (%),Best 10 SPY days missed,Worst 10 SPY days avoided
+Logistic regression,1609.0,5.38,100.0,23.26,18.15,47.71,3.88,69.0,20.0,16.0,13.19,3.0,1.0
+Random forest,1453.0,6.5,256.0,6.01,7.82,25.02,3.18,65.23,39.0,24.0,-0.29,2.0,2.0
+Gradient boosting,1221.0,7.89,488.0,2.77,5.96,29.05,-2.58,63.11,118.0,56.0,-10.98,3.0,5.0

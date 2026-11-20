@@ -1,0 +1,5 @@
+,Long/cash (main),Long/cash (main),Long/cash (main),Long/short,Long/short,Long/short,One-day delay,One-day delay,One-day delay,5-day horizon,5-day horizon,5-day horizon
+,Annualised return (%),Sharpe ratio,Max drawdown (%),Annualised return (%),Sharpe ratio,Max drawdown (%),Annualised return (%),Sharpe ratio,Max drawdown (%),Annualised return (%),Sharpe ratio,Max drawdown (%)
+Logistic regression,9.95,0.44,-34.61,4.39,0.17,-42.2,11.88,0.53,-29.11,15.76,0.7,-33.72
+Random forest,10.58,0.48,-34.55,5.49,0.22,-41.59,11.13,0.5,-29.61,14.31,0.62,-33.72
+Gradient boosting,7.59,0.34,-27.65,-0.8,-0.09,-40.57,4.71,0.18,-30.0,10.19,0.45,-33.72

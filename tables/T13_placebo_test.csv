@@ -1,0 +1,4 @@
+Model,Real labels: CV ROC-AUC,Shuffled labels: mean ROC-AUC,Shuffled labels: std
+Logistic regression,0.493,0.491,0.025
+Random forest,0.495,0.495,0.019
+Gradient boosting,0.496,0.507,0.028

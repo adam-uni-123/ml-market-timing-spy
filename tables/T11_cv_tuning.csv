@@ -1,0 +1,4 @@
+Model,Combinations tried,Best hyperparameters,CV ROC-AUC (mean),CV ROC-AUC (std),CV accuracy (mean)
+Logistic regression,8,"{'C': 0.01, 'pca': 'passthrough'}",0.493,0.028,0.537
+Random forest,12,"{'max_depth': 5, 'max_features': 0.5, 'min_samples_leaf': 50}",0.495,0.023,0.532
+Gradient boosting,16,"{'l2_regularization': 1.0, 'learning_rate': 0.05, 'max_depth': 2, 'max_iter': 300}",0.496,0.022,0.518

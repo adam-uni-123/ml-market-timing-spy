@@ -1,0 +1,4 @@
+,Accuracy,ROC-AUC,Sharpe before costs,Sharpe after costs,Turnover (x per year),Time in SPY (%),Rank by accuracy,Rank by Sharpe after costs
+Logistic regression,0.542,0.503,0.533,0.442,16.957,94.149,1,2
+Random forest,0.535,0.512,0.623,0.477,26.984,85.02,2,1
+Gradient boosting,0.531,0.524,0.732,0.345,64.143,71.445,3,3

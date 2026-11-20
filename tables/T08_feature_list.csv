@@ -1,0 +1,16 @@
+Feature(s),Group,Definition (known at close of t),Financial rationale,Source
+ret_lag0 … ret_lag4,Lagged returns,"SPY log return on days t, t−1, …, t−4",Short-horizon autocorrelation / reversal of index returns,Lo and MacKinlay (1988)
+"mom_20, mom_60, mom_120, mom_252",Momentum,"log(P_t / P_{t−k}) for k = 20, 60, 120, 252 days",Time-series momentum: past trends tend to persist,"Moskowitz, Ooi and Pedersen (2012); Jegadeesh and Titman (1993)"
+"sma_gap_20, sma_gap_50, sma_gap_200",Moving averages,"P_t / SMA_k(t) − 1, trailing k-day average",Trend-following: price relative to its moving average had predictive content for the index,"Brock, Lakonishok and LeBaron (1992); Lecture 6"
+macd_hist,Moving averages,"(MACD − signal line) / P_t, EMAs 12/26/9",Trend acceleration: momentum of the trend itself,Lecture 6
+rsi_14,RSI,"14-day RSI, Wilder smoothing","Overbought / oversold conditions, short-term reversal",Wilder (1978); Lecture 6
+"vol_20, vol_ratio_20_60",Volatility,20-day realised volatility; 20-day / 60-day volatility,Volatility clusters; high volatility predicts weaker risk-adjusted returns,Moreira and Muir (2017)
+range_5,Volatility,5-day mean of ln(High / Low),Intraday range is an efficient volatility estimator,Parkinson (1980)
+"volume_abn, volume_trend",Volume,ln(V_t / 20-day mean V); ln(5-day / 60-day mean V),Volume conditions the sign of return autocorrelation; confirms trend strength,"Campbell, Grossman and Wang (1993); Lecture 6"
+rel5_XLB … rel5_XLY (9),Sectors,5-day sector log return minus SPY 5-day log return,Industry returns lead the aggregate market,"Hong, Torous and Valkanov (2007)"
+breadth_50,Sectors,Share of the 9 sectors above their own 50-day SMA,Breadth of participation in the market trend,"Hong, Torous and Valkanov (2007); Lecture 6"
+cyc_def_20,Sectors,"20-day return, cyclical minus defensive sectors",Risk appetite and growth expectations,"Hong, Torous and Valkanov (2007)"
+"vix_log, vix_chg_5",Risk sentiment,ln VIX_{t−1}; 5-day change in ln VIX (lagged one day),Implied volatility as a gauge of fear and expected risk,Whaley (2000)
+vrp,Risk sentiment,(VIX_{t−1}/100)² − 21-day realised variance,Variance risk premium predicts index returns,"Bollerslev, Tauchen and Zhou (2009)"
+"term_10y3m, term_10y2y",Interest rates,Treasury term spreads (lagged one day),Term spread tracks the business cycle and expected returns; predicts recessions,Campbell (1987); Fama and French (1989); Estrella and Mishkin (1998)
+"rate_3m, d10y_20",Interest rates,3-month yield; 20-day change in 10-year yield (lagged one day),Short rate and rate shocks predict equity returns,Ang and Bekaert (2007); Campbell (1987)

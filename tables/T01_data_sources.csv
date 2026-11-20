@@ -1,0 +1,19 @@
+Series,Description,Source,First date,Last date,Rows
+SPY,SPDR S&P 500 ETF Trust (traded asset),Yahoo Finance,2005-01-03,2026-10-22,5486
+XLB,Materials Select Sector SPDR,Yahoo Finance,2005-01-03,2026-10-22,5486
+XLC,Communication Services Select Sector SPDR (starts June 2018),Yahoo Finance,2018-06-19,2026-10-22,2098
+XLE,Energy Select Sector SPDR,Yahoo Finance,2005-01-03,2026-10-22,5486
+XLF,Financial Select Sector SPDR,Yahoo Finance,2005-01-03,2026-10-22,5486
+XLI,Industrial Select Sector SPDR,Yahoo Finance,2005-01-03,2026-10-22,5486
+XLK,Technology Select Sector SPDR,Yahoo Finance,2005-01-03,2026-10-22,5486
+XLP,Consumer Staples Select Sector SPDR,Yahoo Finance,2005-01-03,2026-10-22,5486
+XLRE,Real Estate Select Sector SPDR (starts October 2015),Yahoo Finance,2015-10-08,2026-10-22,2776
+XLU,Utilities Select Sector SPDR,Yahoo Finance,2005-01-03,2026-10-22,5486
+XLV,Health Care Select Sector SPDR,Yahoo Finance,2005-01-03,2026-10-22,5486
+XLY,Consumer Discretionary Select Sector SPDR,Yahoo Finance,2005-01-03,2026-10-22,5486
+VIX,Cboe Volatility Index (an index: volume is always 0),Yahoo Finance,2005-01-03,2026-10-22,5488
+DGS3MO,"3-month Treasury, constant maturity, % p.a. (risk-free proxy)",FRED (St. Louis Fed),2005-01-03,2026-10-20,5687
+DGS2,"2-year Treasury, constant maturity, % p.a.",FRED (St. Louis Fed),2005-01-03,2026-10-20,5687
+DGS10,"10-year Treasury, constant maturity, % p.a.",FRED (St. Louis Fed),2005-01-03,2026-10-20,5687
+T10Y2Y,"10-year minus 2-year Treasury spread, percentage points",FRED (St. Louis Fed),2005-01-03,2026-10-21,5688
+T10Y3M,"10-year minus 3-month Treasury spread, percentage points",FRED (St. Louis Fed),2005-01-03,2026-10-21,5688
